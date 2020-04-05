@@ -2,8 +2,8 @@ const mongoose = require("mongoose");
 
 const Schema = mongoose.Schema;
 
-const PostSchema = new Schema({
-    video_id: {
+const CommentSchema = new Schema({
+    author:{
         type: String,
         require: true
     },
@@ -14,13 +14,7 @@ const PostSchema = new Schema({
     date:{
         type: Date,
         default: Date.now
-    },
-    comments: [
-        {
-            type: Schema.Types.ObjectId,
-            ref: 'Comment'
-        }
-    ]
+    }
 });
 
-module.exports = mongoose.model('Post', PostSchema); 
+module.exports = mongoose.model('Comment', CommentSchema); 
