@@ -3,11 +3,26 @@ const mongoose = require("mongoose");
 const Schema = mongoose.Schema;
 
 const PostSchema = new Schema({
+    title: {
+        type: String,
+        required: true
+    },
     video_id: {
         type: String,
         require: true
     },
-    text: {
+    image_url:{
+        type: String
+    },
+    text:{
+        type: String,
+        require: true
+    },
+    category:{
+        type: String,
+        require: true
+    },
+    type:{
         type: String,
         require: true
     },
@@ -15,7 +30,7 @@ const PostSchema = new Schema({
         type: Date,
         default: Date.now
     },
-    comments: [
+    comments:[
         {
             type: Schema.Types.ObjectId,
             ref: 'Comment'

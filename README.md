@@ -41,18 +41,24 @@ POST https://riseshineserver.herokuapp.com/post
 
 Name | Data Type | Description
 --- | ---- | ---
+title | string | (Required) Title of the post
 video_id | string | (Required) URL of the video
 text | string | (Required) Detail about the post
+category | string | (Required) Category of the post
+type | string | (Required) Post Type
 
 ```
 {
     "msg": "Post is created",
     "data": {
         "comments": [],
-        "_id": "5e89538f1a64fe5b49299c26",
-        "video_id": "38vidah93ejid",
-        "text": "Fun video",
-        "date": "2020-04-05T03:42:07.484Z",
+        "_id": "5e895ce8d4b04c5d82c45617",
+        "title": "Sit Ups",
+        "video_id": "9dfjrijdsiojd",
+        "text": "Cool video",
+        "category": "Morning",
+        "type": "Work Out",
+        "date": "2020-04-05T04:22:00.881Z",
         "__v": 0
     }
 }
