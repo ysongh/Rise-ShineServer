@@ -44,8 +44,11 @@ Name | Data Type | Description
 title | string | (Required) Title of the post
 video_id | string | (Required) URL of the video
 text | string | (Required) Detail about the post
-category | string | (Required) Category of the post
-type | string | (Required) Post Type
+category | string | (Optional) Category of the post
+type | string | (Optional) Post Type
+image_url | string | (Optional) URL of the image
+resource_url | string | (Optional) URL of the resource
+
 
 ```
 {

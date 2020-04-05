@@ -14,17 +14,18 @@ const PostSchema = new Schema({
     image_url:{
         type: String
     },
+    resource_url:{
+        type: String
+    },
     text:{
         type: String,
         require: true
     },
     category:{
-        type: String,
-        require: true
+        type: String
     },
     type:{
-        type: String,
-        require: true
+        type: String
     },
     date:{
         type: Date,
