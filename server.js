@@ -6,12 +6,14 @@ const db = require('./config/keys').mongoURI;
 const app = express();
 
 const postRoutes = require("./routes/post");
+const commentRoutes = require("./routes/comment");
 
 app.use(bodyParser.urlencoded({extended: false}));
 app.use(bodyParser.json());
 
 app.get('/', (req, res) => res.send('Server Work'));
 app.use('/post', postRoutes);
+app.use('/comment', commentRoutes);
 
 const port = process.env.PORT || 8080;
 

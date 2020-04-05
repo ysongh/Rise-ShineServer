@@ -29,17 +29,4 @@ exports.createPost = async(req, res, next) => {
          console.log("error in POST /post" + err);
          res.status(500).json({ error: "Something went wrong in the server"});
      }
-
-
-    newData.save()
-        .then(result => {
-            res.status(201).json({
-                msg: "Success on creating a post",
-                data: result
-            });
-        })
-        .catch(err => {
-            console.log()
-            return res.status(500).json({error: err});
-        });
 };
