@@ -5,10 +5,13 @@ const bodyParser = require('body-parser');
 const db = require('./config/keys').mongoURI;
 const app = express();
 
+const postRoutes = require("./routes/post");
+
 app.use(bodyParser.urlencoded({extended: false}));
 app.use(bodyParser.json());
 
 app.get('/', (req, res) => res.send('Server Work'));
+app.use('/post', postRoutes);
 
 const port = process.env.PORT || 8080;
 
