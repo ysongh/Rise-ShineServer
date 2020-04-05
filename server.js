@@ -1,6 +1,7 @@
 const express = require('express');
 const mongoose = require('mongoose');
 const bodyParser = require('body-parser');
+const cors = require('cors');
 
 const db = require('./config/keys').mongoURI;
 const app = express();
@@ -10,6 +11,7 @@ const commentRoutes = require("./routes/comment");
 
 app.use(bodyParser.urlencoded({extended: false}));
 app.use(bodyParser.json());
+app.use(cors())
 
 app.get('/', (req, res) => res.send('Server Work'));
 app.use('/post', postRoutes);
