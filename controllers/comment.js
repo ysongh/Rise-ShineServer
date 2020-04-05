@@ -1,7 +1,7 @@
 const Post = require("../models/Post");
 const Comment = require("../models/Comment");
 
-// POST /comment
+// POST /comment/:postId
 exports.addComment = async(req, res, next) => {
     try{
         const postId = req.params.postId;
@@ -17,7 +17,7 @@ exports.addComment = async(req, res, next) => {
             post: post
         });
     }catch(err){
-         console.log("error in POST /comment" + err);
+         console.log("error in POST /comment/:postId" + err);
          res.status(500).json({ error: "Something went wrong in the server"});
     }
 };
