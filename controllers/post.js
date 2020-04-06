@@ -47,3 +47,26 @@ exports.findPostById = async(req, res, next) => {
         res.status(500).json({ error: "Something went wrong in the server"});
     }
 };
+
+// DELETE /post/:postId
+exports.deletePost = async(req, res, next) => {
+    try{
+        const postId = req.params.postId;
+
+        const post = await Post.findById(postId);
+
+        if(!post){
+            res.status(404).json({ error: "This post cannot be found"});
+        }
+
+        await Post.findByIdAndRemove(postId);
+
+        return res.status(200).json({
+            msg: "Post removed",
+            data: post,
+        })
+    }catch(err){
+        console.log("error in DELETE /post/:postId" + err);
+        res.status(500).json({ error: "Something went wrong in the server"});
+    }
+};

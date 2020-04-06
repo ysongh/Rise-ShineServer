@@ -97,6 +97,9 @@ GET https://riseshineserver.herokuapp.com/post/:postId
 }
 ```
 
+### Remove a post
+DELETE https://riseshineserver.herokuapp.com/post/:postId
+
 ## Comment
 
 ### Add comment to a post
